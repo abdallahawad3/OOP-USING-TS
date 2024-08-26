@@ -105,3 +105,29 @@ const em2 = new Emp2("Ali", 21, 58568, 101);
 console.log(em2);
 // em2.empId = 58; // This an error => Cannot assign to 'empId' because it is a read-only property
 console.log(`Employee id is an read only property 👉`, em2.empId);
+/// Inheritance in ts //
+console.log("\n\n\n\n💥💥💥💥💥💥 Inheritance In Ts 💥💥💥💥💥💥\n\n\n ");
+class Person {
+    constructor(name, birthYear, gender) {
+        this.name = name;
+        this.birthYear = birthYear;
+        this.gender = gender;
+    }
+    calcAge() {
+        return new Date().getFullYear() - this.birthYear;
+    }
+}
+const p1 = new Person("Abdullah", 2003, "male");
+class Employee2 extends Person {
+    constructor(name, birthYear, gender, sal, b) {
+        super(name, birthYear, gender);
+        this.salary = sal;
+        this.bonus = b;
+    }
+    calcSalary() {
+        return this.salary + this.bonus;
+    }
+}
+const emp1 = new Employee2("Abdullah", 2003, "male", 25000, 125);
+console.log(p1);
+console.log(emp1);
