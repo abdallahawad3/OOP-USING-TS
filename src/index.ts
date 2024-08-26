@@ -95,3 +95,21 @@ const sal2 = employee2.getSalary();
 console.log("Salary of employee 1 is : ", sal1);
 
 console.log("Salary of employee 2 is : ", sal2);
+
+/// Shorthand Property Initializer //
+console.log("\n\n\n🤔🤔🤔🤔🤔🤔 Shorthand Property Initializer 🤔🤔🤔🤔🤔🤔🤔\n\n\n\n");
+class Emp {
+  constructor(
+    public name: string,
+    public age: number,
+    private salary: number
+  ) {}
+
+  getSalary(): number {
+    return this.salary;
+  }
+}
+
+const em1 = new Emp("Abdullah", 21, 20000);
+console.log(em1);
+console.log(em1.getSalary());
