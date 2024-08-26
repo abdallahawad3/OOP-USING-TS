@@ -88,3 +88,20 @@ class Emp {
 const em1 = new Emp("Abdullah", 21, 20000);
 console.log(em1);
 console.log(em1.getSalary());
+// Readonly Property
+console.log("\n\n\n🤔🤔🤔🤔🤔🤔 Readonly Property 🤔🤔🤔🤔🤔🤔🤔\n\n\n\n");
+class Emp2 {
+    constructor(name, age, salary, id) {
+        this.name = name;
+        this.age = age;
+        this.salary = salary;
+        this.empId = id;
+    }
+    getSalary() {
+        return this.salary;
+    }
+}
+const em2 = new Emp2("Ali", 21, 58568, 101);
+console.log(em2);
+// em2.empId = 58; // This an error => Cannot assign to 'empId' because it is a read-only property
+console.log(`Employee id is an read only property 👉`, em2.empId);
