@@ -127,6 +127,9 @@ class Employee2 extends Person {
     calcSalary() {
         return this.salary + this.bonus;
     }
+    calcAge() {
+        return 2024 - this.birthYear;
+    }
 }
 const emp1 = new Employee2("Abdullah", 2003, "male", 25000, 125);
 console.log(p1);
@@ -165,3 +168,28 @@ console.log(emp1);
     Method (calcSalary):
     calcSalary(): A method that calculates the total salary of the employee by adding the salary and bonus.
  */
+//*********** GETERR AND SETTER METHODS */
+console.log("\n\n\n\n🌀🌀🌀🌀🌀🌀🌀 GETERR AND SETTER METHODS 🌀🌀🌀🌀🌀🌀🌀\n\n\n\n\n");
+class Person2 {
+    constructor(n) {
+        this._age = null;
+        this.name = n;
+    }
+    get GetAge() {
+        if (this._age != null) {
+            console.log("The Age from geterr method");
+            return this._age;
+        }
+        else
+            throw new Error("there no age");
+    }
+    set SetAge(age) {
+        this._age = age;
+    }
+}
+const person1 = new Person2("john");
+console.log(person1);
+// console.log(person1.GetAge);
+person1.SetAge = 21;
+console.log(person1);
+console.log(person1.GetAge);
