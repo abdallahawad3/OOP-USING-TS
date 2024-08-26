@@ -131,3 +131,37 @@ class Employee2 extends Person {
 const emp1 = new Employee2("Abdullah", 2003, "male", 25000, 125);
 console.log(p1);
 console.log(emp1);
+/*
+    * Understanding Inheritance in TypeScript 🌀
+    Inheritance allows a new class, called a subclass or derived class, to inherit the properties and methods of an existing class,
+    called the superclass or base class.
+    This helps in creating a hierarchical relationship between classes.
+
+    Breakdown of My Code.⛓️‍💥
+    
+    01 👉 Superclass (Person):
+    Properties:
+
+    1️⃣ name: string: Public property for the person's name.
+    2️⃣ birthYear: number: Public property for the person's birth year.
+    3️⃣ gender: string: Public property for the person's gender.
+    
+    Constructor: 🤔🤔
+    Initializes name, birthYear, and gender.
+    Method (calcAge):
+    calcAge(): A method that calculates the age of the person by subtracting their birth year from the current year.
+    
+    
+    02 👉 Subclass (Employee2):
+    Properties:
+    1️⃣ salary: number: Private property for the employee's salary.
+    2️⃣ bonus: number: Private property for the employee's bonus.
+    
+    Constructor:🤔🤔
+
+    super(): Calls the constructor of the superclass Person to initialize name, birthYear, and gender.
+    Initializes salary and bonus.
+
+    Method (calcSalary):
+    calcSalary(): A method that calculates the total salary of the employee by adding the salary and bonus.
+ */
