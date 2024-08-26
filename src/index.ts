@@ -43,3 +43,55 @@ u2.greetUser("Mr");
 console.log("\n🎉🎉🎉🎉🎉🎉🎉🎉🎉🎉🎉🎉🎉🎉🎉🎉🎉🎉🎉🎉🎉🎉🎉🎉🎉🎉🎉🎉🎉🎉\n\n");
 console.log(u3);
 u3.greetUser("Mrs");
+
+//* Access Modifier 🤔**/
+console.log(
+  "\n\n\n🤔🤔🤔🤔🤔🤔🤔🤔🤔🤔🤔🤔🤔🤔🤔🤔 Access Modifier 🤔🤔🤔🤔🤔🤔🤔🤔🤔🤔🤔🤔🤔🤔🤔🤔\n\n\n\n"
+);
+/**
+ * 
+ * Understanding Access Modifiers:
+    In TypeScript (and many object-oriented programming languages), 
+    access modifiers are keywords that define the accessibility of class properties and methods out of the class. 
+    The three common access modifiers in TypeScript are:
+
+    1️⃣: public: The default access modifier. Properties and methods are accessible from anywhere.
+    2️⃣: private: Properties and methods are only accessible within the class they are defined.
+    3️⃣: protected: Properties and methods are accessible within the class and its subclasses.
+ */
+class Employee {
+  empName: string;
+  private salary: number;
+  baseLocation: string;
+  isEligible: boolean;
+  private hikePercent: number;
+
+  constructor(name: string, sal: number, loc: string, isEligible: boolean, hike: number) {
+    this.empName = name;
+    this.salary = sal;
+    this.baseLocation = loc;
+    this.isEligible = isEligible;
+    this.hikePercent = hike;
+  }
+
+  getSalary(): number {
+    return this.isEligible ? this.getNewSalary() : this.salary;
+  }
+
+  private getNewSalary(): number {
+    return this.salary + (this.hikePercent * this.salary) / 100;
+  }
+}
+
+const employee1 = new Employee("Abdullah", 10000, "egypt", false, 5);
+const employee2 = new Employee("Abdullah", 10000, "landon", true, 20);
+
+// employee1.salary = 32005; // Error => Property 'salary' is private and only accessible within class 'Employee'
+
+console.log(employee1);
+
+const sal1 = employee1.getSalary();
+const sal2 = employee2.getSalary();
+console.log("Salary of employee 1 is : ", sal1);
+
+console.log("Salary of employee 2 is : ", sal2);
